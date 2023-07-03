@@ -1,6 +1,8 @@
 # Volta Fetch
 
-`volta fetch` 命令将允许您将工具获取到本地缓存中，而无需将其设置为默认值或使其可用，以供将来脱机使用。它的语法如下:
+`volta fetch` 命令将允许您将工具获取到本地缓存中，而无需将其设置为默认值或使其可用，以供将来脱机使用。
+
+它的语法如下:
 
 ```bash
 Fetches a tool to the local machine
