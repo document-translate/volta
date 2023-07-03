@@ -33,6 +33,7 @@ export default defineConfig({
   lang: "zh-CN",
   title: "Volta", // 网站标题
   lastUpdated: true,
+  ignoreDeadLinks: true,
   themeConfig: {
     nav,
     sidebar: sidebar,
