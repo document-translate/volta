@@ -1,0 +1,341 @@
+/*设置layout：page的样式*/
+#VPContent .VPPage {
+    max-width: 1100px;
+    width: 80%;
+    margin: 0 auto;
+}
+#VPContent .VPPage h2 {
+    margin: 1em 0;
+}
+.VPPage div[class*="language-"] {
+    position: relative;
+    margin: 16px -24px;
+    background-color: var(--vp-code-block-bg);
+    overflow-x: auto;
+    transition: background-color 0.5s;
+}
+
+@media (min-width: 640px) {
+    .VPPage div[class*="language-"] {
+        border-radius: 8px;
+        margin: 16px 0;
+    }
+}
+
+@media (max-width: 639px) {
+    .VPPage li div[class*="language-"] {
+        border-radius: 8px 0 0 8px;
+    }
+}
+
+.VPPage div[class*="language-"] + div[class*="language-"],
+.VPPage div[class$="-api"] + div[class*="language-"],
+.VPPage div[class*="language-"] + div[class$="-api"] > div[class*="language-"] {
+    margin-top: -8px;
+}
+.VPPage [class*="language-"] pre,
+.VPPage [class*="language-"] code {
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+.VPPage [class*="language-"] pre {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: 20px 0;
+    background: transparent;
+    overflow-x: auto;
+}
+
+.VPPage [class*="language-"] code {
+    display: block;
+    padding: 0 24px;
+    width: fit-content;
+    min-width: 100%;
+    line-height: var(--vp-code-line-height);
+    font-size: var(--vp-code-font-size);
+    color: var(--vp-code-block-color);
+    transition: color 0.5s;
+}
+
+.VPPage [class*="language-"] code .highlighted {
+    background-color: var(--vp-code-line-highlight-color);
+    transition: background-color 0.5s;
+    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% + 48px);
+    display: inline-block;
+}
+
+.VPPage [class*="language-"] code .highlighted.error {
+    background-color: var(--vp-code-line-error-color);
+}
+
+.VPPage [class*="language-"] code .highlighted.warning {
+    background-color: var(--vp-code-line-warning-color);
+}
+
+.VPPage [class*="language-"] code .diff {
+    transition: background-color 0.5s;
+    margin: 0 -24px;
+    padding: 0 24px;
+    width: calc(100% + 48px);
+    display: inline-block;
+}
+
+.VPPage [class*="language-"] code .diff:before {
+    position: absolute;
+    left: 10px;
+}
+
+.VPPage [class*="language-"] .has-focused-lines .line:not(.has-focus) {
+    filter: blur(0.095rem);
+    opacity: 0.4;
+    transition: filter 0.35s, opacity 0.35s;
+}
+
+.VPPage [class*="language-"] .has-focused-lines .line:not(.has-focus) {
+    opacity: 0.7;
+    transition: filter 0.35s, opacity 0.35s;
+}
+
+.VPPage [class*="language-"]:hover .has-focused-lines .line:not(.has-focus) {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.VPPage [class*="language-"] code .diff.remove {
+    background-color: var(--vp-code-line-diff-remove-color);
+    opacity: 0.7;
+}
+
+.VPPage [class*="language-"] code .diff.remove:before {
+    content: "-";
+    color: var(--vp-code-line-diff-remove-symbol-color);
+}
+
+.VPPage [class*="language-"] code .diff.add {
+    background-color: var(--vp-code-line-diff-add-color);
+}
+
+.VPPage [class*="language-"] code .diff.add:before {
+    content: "+";
+    color: var(--vp-code-line-diff-add-symbol-color);
+}
+
+.VPPage div[class*="language-"].line-numbers-mode {
+    padding-left: 32px;
+}
+
+.VPPage .line-numbers-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    border-right: 1px solid var(--vp-code-block-divider-color);
+    padding-top: 20px;
+    width: 32px;
+    text-align: center;
+    font-family: var(--vp-font-family-mono);
+    line-height: var(--vp-code-line-height);
+    font-size: var(--vp-code-font-size);
+    color: var(--vp-code-line-number-color);
+    transition: border-color 0.5s, color 0.5s;
+}
+
+.VPPage [class*="language-"] > button.copy {
+    direction: ltr;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+    border: 1px solid var(--vp-code-copy-code-border-color);
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--vp-code-copy-code-bg);
+    opacity: 0;
+    cursor: pointer;
+    background-image: var(--vp-icon-copy);
+    background-position: 50%;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    transition: border-color 0.25s, background-color 0.25s, opacity 0.25s;
+}
+
+.VPPage [class*="language-"]:hover > button.copy,
+.VPPage [class*="language-"] > button.copy:focus {
+    opacity: 1;
+}
+
+.VPPage [class*="language-"] > button.copy:hover,
+.VPPage [class*="language-"] > button.copy.copied {
+    border-color: var(--vp-code-copy-code-hover-border-color);
+    background-color: var(--vp-code-copy-code-hover-bg);
+}
+
+.VPPage [class*="language-"] > button.copy.copied,
+.VPPage [class*="language-"] > button.copy:hover.copied {
+    border-radius: 0 4px 4px 0;
+    background-color: var(--vp-code-copy-code-hover-bg);
+    background-image: var(--vp-icon-copied);
+}
+
+.VPPage [class*="language-"] > button.copy.copied:before,
+.VPPage [class*="language-"] > button.copy:hover.copied:before {
+    position: relative;
+    top: -1px;
+    left: -65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--vp-code-copy-code-hover-border-color);
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    width: 64px;
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--vp-code-copy-code-active-text);
+    background-color: var(--vp-code-copy-code-hover-bg);
+    white-space: nowrap;
+    content: "Copied";
+}
+
+.VPPage [class*="language-"] > span.lang {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    z-index: 2;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--vp-c-text-dark-3);
+    transition: color 0.4s, opacity 0.4s;
+}
+
+.VPPage [class*="language-"]:hover > button.copy + span.lang,
+.VPPage [class*="language-"] > button.copy:focus + span.lang {
+    opacity: 0;
+}
+
+div,
+code {
+    box-sizing: border-box;
+}
+@media (min-width: 1440px) {
+    #VPContent.VPContent {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #VPContent.VPContent.has-sidebar {
+        padding-left: var(--vp-sidebar-width);
+        padding-right: 0;
+    }
+    .Layout aside.VPSidebar {
+        padding-left: 32px;
+        width: var(--vp-sidebar-width);
+    }
+    .Layout .VPNavBar.has-sidebar > .container > .title {
+        padding-left: 32px;
+        width: var(--vp-sidebar-width);
+    }
+    .Layout .VPNavBar.has-sidebar .content {
+        padding-left: var(--vp-sidebar-width);
+        padding-right: 32px;
+    }
+    .Layout .VPDoc.has-aside .content-container {
+        max-width: 1000px;
+    }
+}
+
+/*重置默认主题的字体大小*/
+.theme-default-content {
+    font-size: 15px;
+}
+/*reset sidebar style*/
+.sidebar-heading {
+    font-weight: 500;
+    font-size: 16px;
+}
+p.sidebar-item:not(.sidebar-heading) {
+    color: var(--c-bg-arrow);
+}
+.sidebar-item:not(.sidebar-heading) {
+    font-size: 15px;
+}
+
+/** flex
+***************************/
+.flex {
+    display: flex;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.align-items-center {
+    align-items: center;
+    align-content: center;
+}
+.flex-justify-content-between {
+    justify-content: space-between;
+}
+
+.vp-doc .el-table table {
+    margin: 0;
+}
+
+/*Margin*/
+.margin-top-small {
+    margin-top: 8px;
+}
+.margin-top {
+    margin-top: 12px;
+}
+.margin-top-large {
+    margin-top: 24px;
+}
+
+.margin-left-small {
+    margin-left: 8px;
+}
+.margin-left {
+    margin-left: 12px;
+}
+.margin-left-large {
+    margin-left: 24px;
+}
+
+/*Padding*/
+.padding-top-small {
+    padding-top: 8px;
+}
+.padding-top {
+    padding-top: 12px;
+}
+.padding-top-large {
+    padding-top: 24px;
+}
+
+.padding-left-small {
+    padding-left: 8px;
+}
+.padding-left {
+    padding-left: 12px;
+}
+.padding-left-large {
+    padding-left: 24px;
+}

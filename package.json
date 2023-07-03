@@ -1,0 +1,24 @@
+{
+  "name": "web-apis",
+  "version": "1.0.0",
+  "description": "在编写 Web 代码时，有许多 Web API 可供调用。下面是开发 Web 应用程序或网站时可能使用的所有 API 和接口（对象类型）的列表。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev src",
+    "build": "vitepress build src",
+    "preview": "vitepress preview"
+  },
+  "keywords": [
+    "webApi",
+    "web",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "1.0.0-beta.4"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  }
+}
