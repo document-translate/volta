@@ -10,7 +10,7 @@ hero:
       link: /guide/what-is-vitepress
     - theme: alt
       text: GitHub
-      link: https://github.com/vuejs/vitepress
+      link: https://github.com/document-translate/volta
 
 features:
   - title: 快速-Fast
