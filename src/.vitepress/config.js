@@ -32,7 +32,18 @@ const sidebar = {
     },
     {
       text: "高级的",
-      items: [],
+      collapsed: true,
+      items: [
+        { text: "Hooks", link: "/reference/advanced/hooks" },
+        {
+          text: "Packages Binaries",
+          link: "/reference/advanced/packages",
+        },
+        { text: "安装文件", link: "/reference/advanced/installers" },
+        { text: "工作区 Workspace", link: "/reference/advanced/workspaces" },
+        { text: "卸载 Volta", link: "/reference/advanced/uninstall" },
+        { text: "pnpm 支持", link: "/reference/advanced/pnpm" },
+      ],
     },
   ],
 };
