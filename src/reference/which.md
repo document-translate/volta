@@ -1,6 +1,6 @@
 # Volta which
 
-volta which 命令将打开 volta 的垫片并定位将由 volta 启动的实际二进制文件。
+`volta which` 命令将打开 volta 的垫片并定位将由 volta 启动的实际二进制文件。
 
 它的语法如下：
 

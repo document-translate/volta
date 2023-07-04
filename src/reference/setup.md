@@ -1,6 +1,6 @@
 # Volta setups
 
-volta setup 命令将通过修改当前用户的 PATH(以与平台相关的方式)来启用 volta，使其包含 volta shim 目录。
+`volta setup` 命令将通过修改当前用户的 PATH(以与平台相关的方式)来启用 volta，使其包含 volta shim 目录。
 
 ## Unix
 

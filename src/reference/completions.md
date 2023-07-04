@@ -1,6 +1,6 @@
 # Volta completions
 
-volta completions 命令将为您的 shell 生成命令完成信息。
+`volta completions` 命令将为您的 shell 生成命令完成信息。
 
 它的语法如下
 
