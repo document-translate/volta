@@ -53,4 +53,4 @@ jobs:
         env:
           BRANCH: gh-pages
           ACCESS_TOKEN: ${{ secrets.git_token }}
-        run: cd ./src/.vitepress/dist && git init && git add -A && git commit -m "deploy" && git push -f https://$ACCESS_TOKEN@github.com/document-translate/stenciljs.git main:$BRANCH
+        run: cd ./src/.vitepress/dist && git init && git add -A && git commit -m "deploy" && git push -f https://$ACCESS_TOKEN@github.com/document-translate/volta.git main:$BRANCH
