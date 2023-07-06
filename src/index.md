@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 开始
-      link: /guide/what-is-vitepress
+      link: /guide/introduction
     - theme: alt
       text: GitHub
       link: https://github.com/document-translate/volta
