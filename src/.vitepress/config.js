@@ -58,23 +58,24 @@ export default defineConfig({
     sidebar: sidebar,
     lastUpdatedText: "最后更新时间",
     outline: [2, 3],
-    outlineTitle: "目录",
     socialLinks: [
       {
         icon: "github",
         link: "https://github.com/document-translate/volta",
       },
     ],
-    footer: {
-      message: "MIT Licensed",
-      copyright: "Copyright © 2023-present GuoJiKun",
-    },
     docFooter: {
-      prev: "上一页",
-      next: "下一页",
+      prev: "上一篇",
+      next: "下一篇",
     },
     search: {
       provider: "local",
+    },
+    outlineTitle: "章节目录",
+    footer: {
+      message:
+        "此文档为非官方翻译版本 - <div class='vp-doc' style='display:inline-flex;'><a href='https://volta.sh/' target='__blank'>官方网站</a></div>",
+      copyright: "Copyright © 2023-present GuoJiKun",
     },
   },
 });
