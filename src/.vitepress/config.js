@@ -1,4 +1,5 @@
 import { defineConfig } from "vitepress";
+import genSitemap from "./config/gen-sitemap.js";
 
 const nav = [
   { text: "首页", link: "/" },
@@ -77,5 +78,14 @@ export default defineConfig({
         "此文档为非官方翻译版本 - <div class='vp-doc' style='display:inline-flex;'><a href='https://volta.sh/' target='__blank'>官方网站</a></div>",
       copyright: "Copyright © 2023-present GuoJiKun",
     },
+  },
+  buildEnd: (siteConfig) => {
+    const { pages, outDir } = siteConfig;
+    const conf = {
+      host: "https://volta.jikun.dev/",
+      pages,
+      outDir,
+    };
+    genSitemap(conf);
   },
 });

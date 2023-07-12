@@ -1,4 +1,5 @@
 node_modules
 src/.vitepress/dist
 src/.vitepress/cache
-.vitepress
+.vitepress/dist
+.vitepress/cache
