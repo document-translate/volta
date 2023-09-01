@@ -78,7 +78,7 @@ yarn --version # 1.19.2
 
 node 和包管理器可执行文件并不是工具链中唯一的智能工具:工具链中的包二进制文件也知道您的当前目录，并尊重您所在项目的配置。
 
-例如，安装 Typescript 包会将编译器 executable-tsc -添加到你的工具链中:
+例如，安装 Typescript 包会将编译器 *tsc* 添加到你的工具链中:
 
 ```bash
 npm install --global typescript
@@ -92,7 +92,6 @@ tsc --version # 3.9.4
 
 cd /path/to/project-using-typescript-4.1.5
 tsc --version # 4.1.5
-Safety and convenien
 ```
 
 ### 安全方便
