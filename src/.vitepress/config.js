@@ -40,7 +40,7 @@ const sidebar = {
           text: "Packages Binaries",
           link: "/reference/advanced/packages",
         },
-        { text: "安装文件", link: "/reference/advanced/installers" },
+        { text: "安装程序", link: "/reference/advanced/installers" },
         { text: "工作区 Workspace", link: "/reference/advanced/workspaces" },
         { text: "卸载 Volta", link: "/reference/advanced/uninstall" },
         { text: "pnpm 支持", link: "/reference/advanced/pnpm" },
