@@ -237,28 +237,17 @@ code {
     box-sizing: border-box;
 }
 @media (min-width: 1440px) {
-    #VPContent.VPContent {
-        padding-left: 0;
-        padding-right: 0;
+    html,
+    body {
+        font-size: 14px;
     }
-    #VPContent.VPContent.has-sidebar {
-        padding-left: var(--vp-sidebar-width);
-        padding-right: 0;
+}
+@media (min-width: 1920px) {
+    :root {
+        --vp-layout-max-width: 1900px;
     }
-    .Layout aside.VPSidebar {
-        padding-left: 32px;
-        width: var(--vp-sidebar-width);
-    }
-    .Layout .VPNavBar.has-sidebar > .container > .title {
-        padding-left: 32px;
-        width: var(--vp-sidebar-width);
-    }
-    .Layout .VPNavBar.has-sidebar .content {
-        padding-left: var(--vp-sidebar-width);
-        padding-right: 32px;
-    }
-    .Layout .VPDoc.has-aside .content-container {
-        max-width: 1000px;
+    #VPContent .VPDoc.has-aside .content-container {
+        max-width: 1200px;
     }
 }
 
