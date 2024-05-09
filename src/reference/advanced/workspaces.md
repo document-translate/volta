@@ -1,4 +1,4 @@
-# 工作区 Workspace
+# 工作区(Workspace)
 
 关于如何在工作空间环境中使用 Volta 的详细信息，其中在单个 repo 中有多个项目，并且它们都希望共享 Volta 设置。
 
@@ -6,13 +6,16 @@
 此功能是在 Volta 0.8.2 中添加的，在以前的版本中不起作用。
 :::
 
-## Extending the Configuration
+## 扩展配置
 
-Within the `"volta"` section in `package.json`, you can specify an entry with key `"extends"`. The value of that entry should be a path to another JSON file which also has a `"volta"` section. Relative paths will be resolved relative to the file in which they are set. Any Volta settings (e.g. `"node"` or `"yarn"` versions) will be merged with those from the file pointed to by `"extends"`, with precedence given to the current file. So if you want to have a single Node version for all your projects, you would set those versions at the root, and then each project would need _only_ `"extends": "../path/to/root/package.json"`.
+在 `package.json` 的 `"volta"` 部分中，您可以使用键为 `"extends"` 来指定一个条目。
+该条目的值应该是另一个 JSON 文件的路径，该文件也有一个 `"volta"` 部分。
+相对路径将相对于设置它们的文件进行解析。任何 Volta 设置（例如 `"node"` 或 `"yarn"` 版本）都将与由 `"extends"` 指向的文件中的设置合并，当前文件具有优先权。
+因此，如果您想为所有项目使用单个 Node 版本，则应在根目录下设置这些版本，并且每个项目只需要添加 `"extends": "../path/to/root/package.json"` 即可。
 
 ### 示例{#examples}
 
-Given the following folder structure and `package.json` contents:
+给定以下文件夹结构和 `package.json` 的内容：
 
 ```bash
 .
@@ -55,18 +58,22 @@ Given the following folder structure and `package.json` contents:
   }
   ```
 
-Running `node` anywhere in the workspace would cause you to use Node `12.16.1`. And if you update that version in the root `package.json`, it will automatically be used in all of the projects, without having to duplicate the settings in each subproject.
+在工作区的任何地方运行 `node` 将会使用 Node `12.16.1`。如果你在根目录的 `package.json` 中更新了该版本，它将自动应用于所有项目，而无需在每个子项目中重复设置。
 
 ## Pinning Tools
 
-When you run `volta pin` to select a version of a tool within a workspace, Volta will always add those settings to the _closest_ `package.json` that it finds. So, in the above example, if you ran `volta pin node@14` within the `packages/utils` subproject, the new version of Node will be written into `packages/utils/package.json` and will _only_ apply to the `utils` subproject, not to any of the others. This allows you to easily customize the tool versions on a per-project basis.
+当你运行 `volta pin` 来选择工作区内的一个工具版本时，Volta 会将这些设置添加到最近的 `package.json` 中。
+所以，在上面的例子中，如果你在 `packages/utils` 子项目中运行了 `volta pin node@14`，新版本的 Node 将被写入到 `packages/utils/package.json`，
+并且仅适用于 `utils` 子项目，而不是其他任何项目。这样可以让你轻松地根据每个项目自定义工具版本。
 
-If you wish to use `volta pin` to make a change to the root configuration, first `cd` into the workspace root and then run `volta pin` from there.
+如果您希望使用 `volta pin` 对根配置进行更改，请首先进入工作区根目录，然后从那里运行 `volta pin`.
 
 ## Hooks
 
-If your project uses [project hooks](/advanced/hooks), you can place them either in a `.volta` directory in a subproject _or_ in a `.volta` directory in the root. Volta will look for hooks in each location pointed to by an `"extends"` key, so that the settings can be customized at whatever level is needed.
+如果您的项目使用[项目 hooks](/advanced/hooks)，您可以将它们放置在子项目中的 `.volta` 目录中，或者根目录中的 `.volta` 目录中。
+Volta 会在由 `"extends"` 键指向的每个位置查找钩子，以便可以根据需要自定义设置。
 
 ## Project-local Binaries
 
-In addition to looking for hooks at each level, Volta will also look at each level to detect project-local dependencies to use when running a 3rd-party tool. It will attempt to find it in `node_modules/.bin` relative to each file referenced by `"extends"`.
+除了在每个级别上寻找钩子（hook）之外，Volta 还会在每个级别上查找项目本地依赖项，以便在运行第三方工具时使用。
+它将尝试在与 `"extends"`引用的每个文件相关的 `node_modules/.bin` 目录中找到它。
