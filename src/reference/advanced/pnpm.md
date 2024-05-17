@@ -2,10 +2,10 @@
 
 ## 已知的限制{#known-limitations}
 
-对 pnpm 的支持目前是实验性的。要启用该功能，请确保环境变量 VoLTA_FEATURE_PNPM 设置为 1。在 Windows 上，这可以添加到系统设置中的用户或系统环境变量中。在
-Linux/Mac 上，您可以在配置文件脚本中设置该值(例如.bash_profile， .zshrc 或类似的脚本)。
+对 pnpm 的支持目前是实验性的。要启用该功能，请确保环境变量 `VOLTA_FEATURE_PNPM` 设置为 `1`。在 Windows 上，这可以添加到系统设置中的用户或系统环境变量中。在
+Linux/Mac 上，您可以在配置文件脚本中设置该值(例如.bash_profile、.zshrc 或类似的脚本)。
 
-由于这种支持是实验性的，可能会有一些突出的问题。下面列出了一些已知的限制，但是如果你在使用 pnpm 与 Volta 时遇到任何不像你期望的那样工作的问题，请在我们的[GitHub 提 Issue](https://github.com/volta-cli/volta/issues/new)。
+由于这种支持是实验性的，可能会有一些突出的问题。下面列出了一些已知的限制，但是如果你在使用 pnpm 与 Volta 时遇到任何不像你期望的那样工作的问题，请在我们的 [GitHub 提 Issue](https://github.com/volta-cli/volta/issues/new)。
 
 ### 全局安装{#global-installations}
 
