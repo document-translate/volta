@@ -1,0 +1,12 @@
+import{_ as a,c as n,a2 as i,o as e}from"./chunks/framework.BQmytedh.js";const k=JSON.parse('{"title":"Volta pin","description":"","frontmatter":{},"headers":[],"relativePath":"reference/pin.md","filePath":"reference/pin.md","lastUpdated":1732684903000}'),t={name:"reference/pin.md"};function p(l,s,o,r,c,h){return e(),n("div",null,s[0]||(s[0]=[i(`<h1 id="volta-pin" tabindex="-1">Volta pin <a class="header-anchor" href="#volta-pin" aria-label="Permalink to &quot;Volta pin&quot;">​</a></h1><p><code>volta pin</code>命令将更新一个项目的 package.json 文件以使用工具的选定版本。</p><div class="tip custom-block"><p class="custom-block-title">提示</p><p><code>volta pin</code>只适用于 Node 和包管理器(例如 npm 或 Yarn)。对于依赖项，你应该使用 <code>npm install</code> 或 <code>yarn add</code> 来更新选择的版本。</p></div><p>命令格式如下:</p><div class="language-bash vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">bash</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">Pins</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> your</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> project&#39;s runtime or package manager</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">USAGE:</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    volta pin [FLAGS] &lt;tool[@version]&gt;...</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">FLAGS:</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">        --verbose    Enables verbose diagnostics</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">        --quiet      Prevents unnecessary output</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    -h, --help       Prints help information</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">ARGS:</span></span>
+<span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">    &lt;tool[@version]&gt;...    Tools to pin, like \`node@lts\` or \`yarn@^1.14\`.</span></span></code></pre></div>`,5)]))}const F=a(t,[["render",p]]);export{k as __pageData,F as default};
